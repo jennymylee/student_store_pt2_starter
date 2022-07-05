@@ -24,3 +24,4 @@ CREATE DATABASE student_store_seed;
 \connect student_store_seed
 
 \i student-store-schema.sql
+\i student-store-seed.sql

@@ -28,6 +28,6 @@ CREATE TABLE order_details (
   quantity    INTEGER NOT NULL DEFAULT 1,
   discount    INTEGER,
   FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+  -- FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
   PRIMARY KEY (order_id, product_id)
 );

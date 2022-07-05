@@ -51,15 +51,6 @@ class User {
       );
     }
 
-    // const existingUserWithUsername = await User.fetchUserByUsername(
-    //   credentials.username
-    // );
-    // if (existingUserWithUsername) {
-    //   throw new BadRequestError(
-    //     `A user already exists with username: ${credentials.username}`
-    //   );
-    // }
-
     const hashedPassword = await bcrypt.hash(
       credentials.password,
       BCRYPT_WORK_FACTOR
@@ -91,20 +82,6 @@ class User {
 
     return user;
   }
-
-  // static async fetchUserByUsername(username) {
-  //   if (!username) {
-  //     throw new BadRequestError("No username provided");
-  //   }
-
-  //   const query = `SELECT * FROM users WHERE username = $1`;
-
-  //   const result = await db.query(query, [username]);
-
-  //   const user = result.rows[0];
-
-  //   return user;
-  // }
 }
 
 module.exports = User;
